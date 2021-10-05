@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Henry Bass</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+</head>
+
+<style>
+
+    h1{ 
+        margin-left: 200px;
+        font-size:38px;
+        font-family: monospace;
+    }
+
+    h2{
+        margin-left: 200px;
+        font-size: 24px;
+        font-family: monospace;
+    }
+
+    a{
+        margin-left: 200px;
+        font-size: 24px;
+        color: black;
+        font-family: monospace;
+        height: 34px;
+        padding:5px;
+        text-decoration: none;
+    }
+
+    .subtlelink {
+        margin: 0;
+        color: #84fab0;
+    }
+
+    .subtlelink:visited {
+        margin: 0;
+        color: #8fd3f4;
+    }
+
+    p{
+        margin-left: 200px;
+        font-family: monospace;
+        font-size: 24px;
+        font-weight: bolder;
+    }
+    hr{
+        width:75%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        animation-name: baranim;
+        animation-duration: 1s;
+    }
+
+    .mainimage{
+        float: right;
+        margin-right: 200px;
+        width: 400px;
+    }
+
+    .link{
+        text-align: center;
+        border-radius: 10px;
+        padding-top: 5px;
+        background-color: #84fab0;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    button{
+        text-align: center;
+        border-radius: 10px;
+        background-color: #84fab0;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding: 5px;
+        border-style: none;
+        font-size: 24px;
+        font-family: monospace;
+    }
+
+    button:hover{
+        filter: drop-shadow(0 0 0.1rem black);
+        animation: link 0.5s forwards;
+    }
+
+    .link:hover{
+        filter: drop-shadow(0 0 0.1rem black);
+        animation: link 0.5s forwards;
+    }
+
+    .subtitle{
+        text-align: center;
+        font-size: 24px;
+        margin-left: 0px;
+        font-family: monospace;
+    }
+
+    @keyframes baranim {
+        from {width: 0%}
+        to {width:75%}
+    }
+
+    .underline{
+        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        background-repeat: no-repeat;
+        background-position: 0 80%;
+        transition: background-size 0.25s ease-in;
+        animation-name: underline;
+        animation-duration: 1s;
+    }
+
+    @keyframes underline {
+        from {background-size: 0.2em 100%;}
+        to {background-size: 100% 100%;}
+    }
+
+    @keyframes link {
+        from {background-color: #84fab0;}
+        to {background-color: #8fd3f4;}
+    }
+
+    .heading{
+        float: center;
+        font-size:24px;
+    }
+
+    .project{
+
+        margin-top: 100px;
+        margin-left: 50px;
+        text-align: left;
+    }
+
+    .projecticon{
+        width: 20%;
+        overflow: auto;
+        float: left;
+    }
+
+    .code {
+        width: 400px;
+        height: 400px;
+        background-color: #ededed;
+        float: right;
+        margin-right: 100px;
+        margin-top: 100px;
+        text-align: left;
+    }
+
+    .tab { margin-left: 15px; }
+
+</style>
+
+<body>
+    
+    <h1><span class="underline" style="font-size:128px">Henry Bass</span> 
+    
+        <div class=code>
+            <h2 style="margin-left:15px;">
+                #include &lt;iostream.h&gt;<br>
+                #include &lt;conio.h&gt;  <br>
+                #include &lt;stdio.h&gt;  <br>
+                <p></p>
+                void main{
+                    <h2 class=tab>Console.WriteLine("Hello!");</h2>
+                <h2 style="margin-left:15px;">}</h2>
+            </h2>
+
+        </div>
+
+    </h1>
+        
+    <div style="width:1000px">
+    <h2 class=heading style="text-align:center;">I'm Henry. I've got experience in Python, Javascript, and C#. I've worked on a few projects that you can find in my GitHub.
+        This is a small landing page I put together. Thanks for coming by!
+    </h2>
+    </div>
+    
+    <div>
+    <br></br>
+    <div style="height:200px;"></div>
+    <hr>
+    <div class=subtitle>
+        <h3>Links:</h2>
+        </div style="margin:2000px">
+
+        <div style="text-align:center">
+            <a href="https://github.com/HenryBass" class=link target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://stackoverflow.com/users/17084248/henry-bass?tab=profile" class=link target="_blank" rel="noopener noreferrer">Stack Overflow</a>
+            <button type="button" onclick="copy()" id="discord">Discord</button>
+            
+        </div>
+        </div>
+        <hr>
+    </div>
+
+    <h1>Recent Projects:</h1>
+
+    <div class=project>
+        
+        <h2> <img src="spelling-bee.png" class=projecticon>Spelling Bee Solver <br></br>
+            An algorith made to solve the <a href="https://www.nytimes.com/puzzles/spelling-bee" class=subtlelink>NY Times Spelling Bee.</a>
+        </h2>
+        <div style="height:250px"></div>
+        <h2> <img src="discord_logo.png" class=projecticon>Discord Nuker<br></br>
+            A discord bot that floods servers with messages, and can preform mass bans. It's based on the <a href="https://discordpy.readthedocs.io/en/stable/" class=subtlelink>Discord API.</a>
+        </h2>
+        
+    </div>
+
+
+</body>
+
+<script>
+
+function copy() {
+  navigator.clipboard.writeText("Henry21#6630");
+  document.getElementById("discord").innerHTML = "Copied!";
+}
+</script>
+</html>
