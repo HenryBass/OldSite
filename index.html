@@ -22,7 +22,6 @@
         font-family: monospace;
     }
 
-
     h2{
         margin-left: 200px;
         font-size: 24px;
@@ -62,13 +61,7 @@
         margin-top: 50px;
         margin-bottom: 50px;
         animation-name: baranim;
-        animation-duration: 1s;
-    }
-
-    .mainimage{
-        float: right;
-        margin-right: 200px;
-        width: 400px;
+        animation-duration: 2s;
     }
 
     .link{
@@ -114,14 +107,20 @@
         to {width:75%}
     }
 
-    .underline{
+    .underline {
         background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
         background-repeat: no-repeat;
-        background-position: 0 80%;
-        transition: background-size 0.25s ease-in;
+        background-size: 100% 100%;
+        background-position: 0 88%;
+        transition: background-size 1s ease-in;
         animation-name: underline;
-        animation-duration: 1s;
+        animation-duration: 2s;
     }
+    .underline:hover {
+        background-size: 0.2em 100%;
+    }
+    
+
 
     @keyframes underline {
         from {background-size: 0.2em 100%;}
@@ -152,14 +151,14 @@
     }
 
     .code {
-        width: 400px;
-        height: 400px;
+        width: 21vw;
+        height: 21vw;
         background-color: #ededed;
         float: right;
         margin-right: 100px;
         margin-top: 100px;
         text-align: left;
-        animation: shadow 1s forwards;
+        animation: shadow 2s forwards;
     }
 
     @keyframes shadow {
@@ -233,6 +232,10 @@
         <div style="height:250px"></div>
         <h2> <img src="discord_logo.png" class=projecticon>Discord Nuker<br></br>
             A discord bot that floods servers with messages, and can preform mass bans. It's based on the <a href="https://discordpy.readthedocs.io/en/stable/" class=subtlelink>Discord API.</a>
+        </h2>
+        <div style="height:250px"></div>
+        <h2> <img src="black-hole.png" class=projecticon>Black Hole Calculator<br></br>
+           A math project I did that returns information about a black hole, given it's mass. Inspired by this <a href="https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator" class=subtlelink>Calculator, made by Viktor T Toth.</a>
         </h2>
         
     </div>
