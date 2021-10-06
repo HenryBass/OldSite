@@ -22,6 +22,7 @@
         font-family: monospace;
     }
 
+
     h2{
         margin-left: 200px;
         font-size: 24px;
@@ -158,7 +159,12 @@
         margin-right: 100px;
         margin-top: 100px;
         text-align: left;
-        filter: drop-shadow(0 0 0.1rem black);
+        animation: shadow 1s forwards;
+    }
+
+    @keyframes shadow {
+        from {}
+        to {filter: drop-shadow(0 0 0.1rem black);}
     }
 
     footer{
