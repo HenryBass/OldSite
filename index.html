@@ -158,19 +158,20 @@
     .code {
         width: 21vw;
         height: 21vw;
-        background-color: #ededed;
+        background-color: #f1f1f1;
         float: right;
         margin-right: 100px;
         font-size: 1.2vw;
         margin-top: 100px;
         margin-left:  5.21px;
+        border-radius: 10px;
         text-align: left;
         animation: shadow 2s forwards;
     }
 
     @keyframes shadow {
         from {}
-        to {filter: drop-shadow(0 0 0.1rem black);}
+        to {filter: drop-shadow(0 5px 9px gray);}
     }
 
     footer{
@@ -221,9 +222,9 @@
                 #include <span class=highlightblue>&lt;conio.h&gt;</span>  <br>
                 #include <span class=highlightblue>&lt;stdio.h&gt;</span>  <br><br>
 
-                <span class=shadowgreen>void</span> main{
+                <span class=highlightgreen>void</span> main{
 
-                    <h2 class=tab><span class=shadowblue>Console</span>.WriteLine(<span class=shadowgreen>"Hello!"</span>);</h2>
+                    <h2 class=tab><span class=highlightblue>Console</span>.WriteLine(<span class=highlightgreen>"Hello!"</span>);</h2>
 
                 <h2 style="margin-left:15px;">
                 }
