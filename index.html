@@ -273,7 +273,7 @@
         <h1>About:</h1>
         <p>My favorite things to do with code are generally simulations and automation, but I mostly just mess around and see what I can make.
             I tried to made this site as fancy as possible,
-             with pleny of bells and whistles. In fact, there's a dark mode option below. It should automatically load into dark mode if it's past 8pm!</p><br>
+             with pleny of bells and whistles. In fact, there's a dark mode option below. It should automatically load into dark mode if it's past 7pm!</p><br>
     <button type="button" onclick="dark()" id="toggle" style="margin-left: 200px">&#127769; Dark Mode</button>
     </div>
 
@@ -363,7 +363,7 @@
     var d = new Date();
     var hours = d.getHours();
 
-    if(hours >= 20) {
+    if(hours >= 19) {
         dark();
     }
         
