@@ -12,6 +12,15 @@
 
 <style>
 
+    :root {
+        --green: #84fab0;
+        --darkgreen: #78e09f;
+        --blue: #8fd3f4; 
+        --red: #fa8484;
+        --purple: #f18ff4;
+    }
+
+
     body{
         margin: 0px;
     }
@@ -42,12 +51,12 @@
 
     .subtlelink {
         margin: 0;
-        color: #84fab0;
+        color: var(--green);
     }
 
     .subtlelink:visited {
         margin: 0;
-        color: #8fd3f4;
+        color: var(--blue);
     }
 
     p{
@@ -55,6 +64,7 @@
         font-family: monospace;
         font-size: 1.25vw;
         font-weight: bolder;
+        margin-right: 200px;
     }
     hr{
         width:75%;
@@ -70,7 +80,7 @@
     .link{
         text-align: center;
         border-radius: 10px;
-        background-color: #84fab0;
+        background-color: var(--green);
         margin-left: 50px;
         margin-right: 50px;
         padding: 7px;
@@ -79,7 +89,7 @@
     button{
         text-align: center;
         border-radius: 10px;
-        background-color: #84fab0;
+        background-color: var(--green);
         margin-left: 50px;
         margin-right: 50px;
         padding: 7px;
@@ -111,7 +121,7 @@
     }
 
     .underline {
-        background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+        background-image: linear-gradient(120deg, var(--green) 0%, var(--blue) 100%);
         background-repeat: no-repeat;
         background-size: 100% 100%;
         background-position: 0 88%;
@@ -119,6 +129,7 @@
         animation-name: underline;
         animation-duration: 2s;
     }
+
     .underline:hover {
         background-size: 0.2em 100%;
     }
@@ -131,8 +142,8 @@
     }
 
     @keyframes link {
-        from {background-color: #84fab0;}
-        to {background-color: #8fd3f4;}
+        from {background-color: var(--green);}
+        to {background-color: var(--blue);}
     }
 
     .heading{
@@ -145,7 +156,7 @@
         margin-top: 100px;
         margin-left: 50px;
         text-align: left;
-        margin-right: 50px;
+        margin-right: 200px;
     }
 
     .projecticon{
@@ -170,9 +181,19 @@
         animation: shadow 2s forwards;
     }
 
+    .codedark {
+        background-color: #424343;
+        animation: shadowdark 2s forwards;
+    }
+
     @keyframes shadow {
         from {}
         to {filter: drop-shadow(0 5px 9px gray);}
+    }
+
+    @keyframes shadowdark {
+        from {}
+        to {filter: drop-shadow(0 5px 9px black);}
     }
 
     footer{
@@ -191,22 +212,21 @@
     }
 
     .highlightblue{
-        color: #8fd3f4;
+        color: var(--blue);
     }
 
     .highlightgreen{
-        color: #78e09f;
+        color: var(--darkgreen);
     }
-
-
 
 </style>
 
 <body>
     
-    <h1><span class="underline" style="font-size:6.6vw;">Henry Bass</span> 
+    <h1><span class="underline" style="font-size:6.6vw;" id="name">Henry Bass</span> 
+        
 
-        <div class=code>
+        <div class=code id="code">
             <h2 style="margin-left:15px; margin-top: 10px">
 
                 db  <span class=highlightblue>'Hello!'</span>, 10, 0 <div style="margin-top: 10px;">
@@ -242,9 +262,19 @@
             <a href="https://stackoverflow.com/users/17084248/henry-bass?tab=profile" class=link target="_blank" rel="noopener noreferrer">Stack Overflow</a>
             <button type="button" onclick="copy()" id="discord">Discord</button>
             
+            
         </div>
         </div>
         <hr class=growhr>
+    </div>
+
+
+    <div>
+        <h1>About:</h1>
+        <p>My favorite things to do with code are generally simulations and automation, but I mostly just mess around and see what I can make.
+            I'm a firm beliver in open source, so you can find all my messy code on github. I tried made this site as fancy as possible,
+             with pleny of bells and whistles. In fact, there's a dark mode option below. It should automatically load into dark mode if it's past 8pm. Thanks!</p><br>
+    <button type="button" onclick="dark()" id="toggle" style="margin-left: 200px">&#127769; Dark Mode</button>
     </div>
 
     <h1>Recent Projects:</h1>
@@ -268,16 +298,73 @@
         
     </div>
 
-    <footer><p>Henry Bass, 2021</p></footer>
+    <footer id=footer><p>Henry Bass, 2021</p></footer>
 
 </body>
 
 <script>
 
+    var root = document.querySelector(':root');
+
     function copy() {
       navigator.clipboard.writeText("Henry21#6630");
       document.getElementById("discord").innerHTML = "Copied!";
     }
-    
+
+    const htmlEl = document.getElementsByTagName('html')[0];
+
+    function dark(){
+        document.body.style.color = "#FFFFFF";
+        var title = document.getElementById("name")
+        title.style.color = '#2e2e2e';
+
+        var code = document.getElementById("code")
+        code.classList.add("codedark");
+
+        var footer = document.getElementById("footer")
+        footer.style.backgroundColor = "#424343";
+
+
+        document.body.style.backgroundColor = "#2e2e2e";
+
+        root.style.setProperty('--blue', '#f18ff4');
+        root.style.setProperty('--green', '#fa8484');
+        root.style.setProperty('--darkgreen', '#fa8484');
+
+        var toggle = document.getElementById("toggle")
+        toggle.innerHTML = "&#9728;&#65039; Light Mode"
+        toggle.onclick = function() {light()};
+    }
+
+    function light(){
+        document.body.style.color = "#000000";
+        document.body.style.backgroundColor = "#FFFFFF";
+
+        var footer = document.getElementById("footer")
+        footer.style.backgroundColor = "#ededed";
+
+        root.style.setProperty('--blue', '#8fd3f4');
+        root.style.setProperty('--green', '#84fab0');
+        root.style.setProperty('--darkgreen', '#78e09f');
+
+        var title = document.getElementById("name")
+        title.style.color = '#000000';
+
+        var code = document.getElementById("code")
+        code.classList.remove("codedark");
+
+        var toggle = document.getElementById("toggle")
+        toggle.innerHTML = "&#127769; Dark Mode"
+        toggle.onclick = function() {dark()};
+    }
+
+
+    var d = new Date();
+    var hours = d.getHours();
+
+    if(hours >= 20) {
+        dark();
+    }
+        
 </script>
 </html> 
