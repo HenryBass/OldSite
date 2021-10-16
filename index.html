@@ -28,13 +28,13 @@
     h1{ 
         margin-left: 200px;
         font-size:38px;
-        font-family: monospace;
+        font-family: mono;
     }
 
     h2{
         margin-left: 200px;
         font-size: 1.25vw;
-        font-family: monospace;
+        font-family: mono;
         
     }
 
@@ -42,7 +42,7 @@
         margin-left: 200px;
         font-size: 1.25vw;
         color: black;
-        font-family: monospace;
+        font-family: mono;
         height: 34px;
         padding:5px;
         text-decoration: none;
@@ -61,7 +61,7 @@
 
     p{
         margin-left: 200px;
-        font-family: monospace;
+        font-family: mono;
         font-size: 1.25vw;
         font-weight: bolder;
         margin-right: 200px;
@@ -70,6 +70,7 @@
         width:75%;
         margin-top: 50px;
         margin-bottom: 50px;
+        border-top: 1px;
     }
 
     .growhr{
@@ -95,7 +96,7 @@
         padding: 7px;
         border-style: none;
         font-size: 1.25vw;
-        font-family: monospace;
+        font-family: mono;
     }
 
     button:hover{
@@ -112,7 +113,7 @@
         text-align: center;
         font-size: 24px;
         margin-left: 0px;
-        font-family: monospace;
+        font-family: mono;
     }
 
     @keyframes baranim {
@@ -160,10 +161,7 @@
     }
 
     .projecticon{
-        width: 20%;
-        overflow: auto;
-        float: left;
-        margin-right: 10px;
+        width: 10vw;
     }
 
     .code {
@@ -218,6 +216,40 @@
     .highlightgreen{
         color: var(--darkgreen);
     }
+
+
+    .container {
+    display: grid; 
+    grid-template-columns: 10vw; 
+    grid-template-rows: 3vw 0vw 10vw; 
+    margin-left: 10vw;
+    gap: 10px 10px; 
+    grid-template-areas: 
+        "Image Title"
+        "Image Desc"
+        ". ."; 
+    }
+    .Image { 
+        grid-area: Image;
+    }
+    .Title {
+        grid-area: Title;
+        font-family: mono;
+        font-size: 1.5vw;
+        font-weight: bolder;
+        margin-right: 200px;
+    }
+    .Desc {
+        grid-area: Desc;
+        font-family: mono;
+        font-size: 1.25vw;
+        font-weight: bolder;
+        margin-right: 200px;
+    }
+
+    @font-face {
+        font-family: mono; src: url('CONSOLA.ttf');
+    } 
 
 </style>
 
@@ -277,26 +309,29 @@
     <button type="button" onclick="dark()" id="toggle" style="margin-left: 200px">&#127769; Dark Mode</button>
     </div>
 
-    <h1>Recent Projects:</h1>
 
-    <div class=project>
-        
-        <h2> <img src="spellingbee.png" class=projecticon><h2 style="font-size:1.5vw">Spelling Bee Solver</h2><br></br>
-            <h2> An algorith made to solve the <a href="https://www.nytimes.com/puzzles/spelling-bee" class=subtlelink>NY Times Spelling Bee.</a> It's written in Python, and can solve the puzzle in about 4 seconds.
-        </h2>
-        <hr>
-            <h2> <img src="discord_logo.png" class=projecticon><h2 style="font-size:1.5vw">Discord Nuker</h2><br></br>
-            <h2> A discord bot that floods servers with messages, and can preform mass bans. It's based on the <a href="https://discordpy.readthedocs.io/en/stable/" class=subtlelink>Discord API.</a>
-        </h2>
-        <hr>
-            <div style="margin-left:200px;">
-            <img src="black-hole.png" class=projecticon> <h2 style="font-size:1.5vw">Black Hole Calculator</h2><br></br>
-            <h2>A math project I did that returns information about a black hole, given it's mass. It's written in python, and the sources can be downloaded off of my GitHub.
-                 Inspired by this <a href="https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator" class=subtlelink>Calculator,</a> made by Viktor T Toth.
-        </h2>
+    
+    <h1 style="margin-bottom:50px; margin-top:50px;">Recent Projects:</h1>
+    <div class="container">
+        <div class="Image"><img src="spellingbee.png" class="projecticon"></div>
+        <div class="Title">Spelling Bee Solver</div>
+        <div class="Desc">An algorith made to solve the <a href="https://www.nytimes.com/puzzles/spelling-bee" class="subtlelink">NY Times Spelling Bee.</a> It's written in Python, and can solve the puzzle in about 4 seconds.</div>
+    </div>
+    <hr style="margin-top:0px;margin-bottom:50px">
+    <div class="container">
+        <div class="Image"><img src="discord_logo.png" class="projecticon"></div>
+        <div class="Title">Discord Nuker</div>
+        <div class="Desc">A discord bot that floods servers with messages, and can preform mass bans. It's based on the <a href="https://discordpy.readthedocs.io/en/stable/" class="subtlelink">Discord API.</a></div>
+    </div>
+    <hr style="margin-top:0px;margin-bottom:50px">
+    <div class="container">
+        <div class="Image"><img src="black-hole.png" class="projecticon"></div>
+        <div class="Title">Black Hole Calculator</div>
+        <div class="Desc">A math project I did that returns information about a black hole, given it's mass. It's written in python, and the sources can be downloaded off of my GitHub.
+            Inspired by this <a href="https://www.vttoth.com/CMS/physics-notes/311-hawking-radiation-calculator" class="subtlelink">Calculator</a>, made by Viktor T Toth.
+   </div>
     </div>
 
-        
     </div>
 
     <footer id=footer><p>Henry Bass, 2021</p></footer>
@@ -358,7 +393,6 @@
         toggle.innerHTML = "&#127769; Dark Mode"
         toggle.onclick = function() {dark()};
     }
-
 
     var d = new Date();
     var hours = d.getHours();
