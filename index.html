@@ -6,8 +6,6 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="description" content="" />
 
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
 </head>
 
 <style>
@@ -28,13 +26,13 @@
     h1{ 
         margin-left: 200px;
         font-size:38px;
-        font-family: Consolas;
+        font-family: monospace;
     }
 
     h2{
         margin-left: 200px;
         font-size: 1.25vw;
-        font-family: Consolas;
+        font-family: monospace;
         
     }
 
@@ -42,7 +40,7 @@
         margin-left: 200px;
         font-size: 1.25vw;
         color: black;
-        font-family: Consolas;
+        font-family: monospace;
         height: 34px;
         padding:5px;
         text-decoration: none;
@@ -61,7 +59,7 @@
 
     p{
         margin-left: 200px;
-        font-family: Consolas;
+        font-family: monospace;
         font-size: 1.25vw;
         font-weight: bolder;
         margin-right: 200px;
@@ -71,6 +69,7 @@
         margin-top: 50px;
         margin-bottom: 50px;
         border-top: 1px;
+        color: black;
     }
 
     .growhr{
@@ -96,7 +95,7 @@
         padding: 7px;
         border-style: none;
         font-size: 1.25vw;
-        font-family: Consolas;
+        font-family: monospace;
     }
 
     button:hover{
@@ -113,7 +112,7 @@
         text-align: center;
         font-size: 24px;
         margin-left: 0px;
-        font-family: Consolas;
+        font-family: monospace;
     }
 
     @keyframes baranim {
@@ -165,8 +164,8 @@
     }
 
     .code {
-        width: 21vw;
-        height: 21vw;
+        width: 22vw;
+        height: 22vw;
         background-color: #f1f1f1;
         float: right;
         margin-right: 100px;
@@ -234,21 +233,21 @@
     }
     .Title {
         grid-area: Title;
-        font-family: Consolas;
+        font-family: monospace;
         font-size: 1.5vw;
         font-weight: bolder;
         margin-right: 200px;
     }
     .Desc {
         grid-area: Desc;
-        font-family: Consolas;
+        font-family: monospace;
         font-size: 1.25vw;
         font-weight: bolder;
         margin-right: 200px;
     }
 
     @font-face {
-        font-family: mono; src: url('../henrybass.github.io/CONSOLA.ttf');
+        font-family: mono; src: url('CONSOLA.TTF');
     } 
 
 </style>
@@ -305,7 +304,7 @@
         <h1>About:</h1>
         <p>My favorite things to do with code are generally simulations and automation, but I mostly just mess around and see what I can make.
             I tried to made this site as fancy as possible,
-             with pleny of bells and whistles. In fact, there's a dark mode option below. It should automatically load into dark mode if it's past 7pm!</p><br>
+             with plenty of bells and whistles. In fact, there's a dark mode option below. It should automatically load into dark mode if it's past 7pm!</p><br>
     <button type="button" onclick="dark()" id="toggle" style="margin-left: 200px">&#127769; Dark Mode</button>
     </div>
 
@@ -327,7 +326,7 @@
     <div class="container">
         <div class="Image"><img src="black-hole.png" class="projecticon"></div>
         <div class="Title">Black Hole Calculator</div>
-        <div class="Desc">A math project I did that returns information about a black hole, given it's mass. It's written in JS, and a web version can be found <a href="https://henrybass.github.io/Black-Hole-Calculator-JS/" class="subtlelink">Here</a>.</div>
+        <div class="Desc">A math project I did that returns information about a black hole, given it's mass. It's written in JS, and a web version can be found <a href="https://henrybass.github.io/Black-Hole-Calculator-JS/" class="subtlelink">Here.</a></div>
    </div>
     </div>
 
