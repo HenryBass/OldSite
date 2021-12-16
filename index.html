@@ -4,6 +4,7 @@
   <title>Henry Bass</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <meta name="description" content="" />
 
 </head>
@@ -248,7 +249,7 @@
 
     @font-face {
         font-family: mono; src: url('CONSOLA.TTF');
-    } 
+    }
 
 </style>
 
@@ -286,7 +287,7 @@
     <div style="height:10.4vw;"></div>
     <hr class=growhr>
     <div class=subtitle>
-        <h3>Links:</h2>
+        <h3>Links:</h3>
         </div style="margin:104wv">
         <div style="text-align:center">
             <a href="https://github.com/HenryBass" class=link target="_blank" rel="noopener noreferrer">GitHub</a>
@@ -311,34 +312,47 @@
 
     
     <h1 style="margin-bottom:50px; margin-top:50px;">Recent Projects:</h1>
+
+    <div class="container">
+        <div class="Image"><img src="onion.png" class="projecticon"></div>
+        <div class="Title">Dark Web Server</div>
+        <div class="Desc">Just for fun, I put a Tor hidden service on my Raspberry pi. You can find it <a class="subtlelink" href="http://jih4ism5imptocrcuwx3nzlbf4j2vdwetixrc5ys3h7keoqncgp672id.onion/">here.</a>(Tor required) I also set up a locally hosted dark web IRC chat.</div>
+    </div>
+    <hr style="margin-top:0px;margin-bottom:50px" class = "reactivehr1">
+    <div class="container" class = "reactivehr">
+        <div class="Image"><img src="lock.png" class="projecticon"></div>
+        <div class="Title">Site Unblocker</div>
+        <div class="Desc">I hate Securly, so I made a webiste that generates an unblocked link to any site. It uses Google Translate as a proxy, and a Securly exploit to work. Try it out <a class="subtlelink" href="https://henrybass.github.io/unblocker/">here.</a></div>
+    </div>
+    <hr style="margin-top:0px;margin-bottom:50px" class = "reactivehr2">
     <div class="container">
         <div class="Image"><img src="spellingbee.png" class="projecticon"></div>
         <div class="Title">Spelling Bee Solver</div>
         <div class="Desc">An algorith made to solve the <a href="https://www.nytimes.com/puzzles/spelling-bee" class="subtlelink">NY Times Spelling Bee.</a> It's written in Python, and can solve the puzzle in about 4 seconds.</div>
     </div>
-    <hr style="margin-top:0px;margin-bottom:50px">
+    <hr style="margin-top:0px;margin-bottom:50px" class = "reactivehr3">
     <div class="container">
         <div class="Image"><img src="canvas.png" class="projecticon"></div>
         <div class="Title">Generative Art</div>
         <div class="Desc">An algorithm to create totally unique abstract art. It uses p5.js, and can be found <a href="https://github.com/HenryBass/Generative-Art" class="subtlelink">here.</a></div>
     </div>
-    <hr style="margin-top:0px;margin-bottom:50px">
+    <hr style="margin-top:0px;margin-bottom:50px" class = "reactivehr4">
     <div class="container">
         <div class="Image"><img src="discord_logo.png" class="projecticon"></div>
         <div class="Title">Discord Nuker</div>
         <div class="Desc">A discord bot that floods servers with messages, and can preform mass bans. It's based on the <a href="https://discordpy.readthedocs.io/en/stable/" class="subtlelink">Discord API.</a></div>
     </div>
-    <hr style="margin-top:0px;margin-bottom:50px">
+    <hr style="margin-top:0px;margin-bottom:50px" class = "reactivehr5">
     <div class="container">
         <div class="Image"><img src="black-hole.png" class="projecticon"></div>
         <div class="Title">Black Hole Calculator</div>
-        <div class="Desc">A math project I did that returns information about a black hole, given it's mass. It's written in JS, and a web version can be found <a href="https://henrybass.github.io/Black-Hole-Calculator-JS/" class="subtlelink">Here.</a></div>
+        <div class="Desc">A math project I did that returns information about a black hole, given it's mass. It's written in JS, and a web version can be found <a href="https://henrybass.github.io/Black-Hole-Calculator-JS/" class="subtlelink">here.</a></div>
    </div>
     </div>
 
     </div>
 
-    <footer id=footer><p>Henry Bass, 2021</p></footer>
+    <footer><p id = footer>Henry Bass, 2021</p></footer>
 
 </body>
 
@@ -404,6 +418,47 @@
     if(hours >= 19) {
         dark();
     }
-        
+
+    let text = 'Henry Bass, 2021';
+    let i = 0;
+
+    var typing = setInterval(function(){
+        let displayText = text.substring(0, i % text.length + 1 );
+        document.getElementById('footer').innerHTML = displayText;
+        i++;
+        if( i >= text.length){
+            clearInterval(typing);
+        }
+    },250)
+
+    $(document).ready(function(){
+        $(document).scroll(function(evt){
+        if($(this).scrollTop() >= $('.reactivehr1').position().top - $(window).height()){
+
+            $('.reactivehr1').addClass('growhr')
+
+        }
+        if($(this).scrollTop() >= $('.reactivehr2').position().top - $(window).height()){
+
+            $('.reactivehr2').addClass('growhr')
+
+        }
+        if($(this).scrollTop() >= $('.reactivehr3').position().top - $(window).height()){
+
+            $('.reactivehr3').addClass('growhr')
+
+        }
+        if($(this).scrollTop() >= $('.reactivehr4').position().top - $(window).height()){
+
+            $('.reactivehr4').addClass('growhr')
+
+        }
+        if($(this).scrollTop() >= $('.reactivehr5').position().top - $(window).height()){
+
+            $('.reactivehr5').addClass('growhr')
+
+        }
+});
+});
 </script>
 </html> 
