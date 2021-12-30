@@ -100,12 +100,10 @@
     }
 
     button:hover{
-        filter: drop-shadow(0 0 0.1rem black);
         animation: link 0.5s forwards;
     }
 
     .link:hover{
-        filter: drop-shadow(0 0 0.1rem black);
         animation: link 0.5s forwards;
     }
 
@@ -144,7 +142,8 @@
 
     @keyframes link {
         from {background-color: var(--green);}
-        to {background-color: var(--blue);}
+        to {background-color: var(--blue);
+        filter: drop-shadow(0 0 0.4rem black);}
     }
 
     .heading{
