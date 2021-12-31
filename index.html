@@ -351,11 +351,12 @@
 
     </div>
 
-    <footer><p id = footer>Henry Bass, 2021</p></footer>
+    <footer id=footercontainer><p id = footer></p></footer>
 
 </body>
 
 <script>
+    write = false;
 
     var root = document.querySelector(':root');
 
@@ -375,6 +376,9 @@
         code.classList.add("codedark");
 
         var footer = document.getElementById("footer")
+        footer.style.backgroundColor = "#424343";
+
+        var footer = document.getElementById("footercontainer")
         footer.style.backgroundColor = "#424343";
 
 
@@ -419,16 +423,6 @@
     }
 
     let text = 'Henry Bass, 2021';
-    let i = 0;
-
-    var typing = setInterval(function(){
-        let displayText = text.substring(0, i % text.length + 1 );
-        document.getElementById('footer').innerHTML = displayText;
-        i++;
-        if( i >= text.length){
-            clearInterval(typing);
-        }
-    },250)
 
     $(document).ready(function(){
         $(document).scroll(function(evt){
@@ -457,7 +451,27 @@
             $('.reactivehr5').addClass('growhr')
 
         }
+
+        if($(this).scrollTop() >= $('footer').position().top - $(window).height()){
+
+        write = true;
+
+        }
 });
 });
+
+//if (write) {
+    let i = 0;
+
+    var typing = setInterval(function(){
+    let displayText = text.substring(0, i % text.length + 1 );
+    document.getElementById('footer').innerHTML = displayText;
+    i++;
+
+    if( i >= text.length){
+        clearInterval(typing);
+    }
+    },250)
+//}
 </script>
 </html> 
