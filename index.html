@@ -313,6 +313,12 @@
     <h1 style="margin-bottom:50px; margin-top:50px;">Recent Projects:</h1>
 
     <div class="container">
+        <div class="Image"><img src="chat.png" class="projecticon"></div>
+        <div class="Title">Chat App</div>
+        <div class="Desc">I made a working chat app with themes, channels and stuff. You might actually find me on it! You can find it <a class="subtlelink" href="https://henrybass.github.io/MathVis/">here.</a> Have fun!</div>
+    </div>
+    <hr style="margin-top:0px;margin-bottom:50px" class = "reactivehr6">
+    <div class="container">
         <div class="Image"><img src="onion.png" class="projecticon"></div>
         <div class="Title">Dark Web Server</div>
         <div class="Desc">Just for fun, I put a Tor hidden service on my Raspberry pi. You can find it <a class="subtlelink" href="http://jih4ism5imptocrcuwx3nzlbf4j2vdwetixrc5ys3h7keoqncgp672id.onion/">here.</a>(Tor required) I also set up a locally hosted dark web IRC chat.</div>
@@ -449,6 +455,12 @@
         if($(this).scrollTop() >= $('.reactivehr5').position().top - $(window).height()){
 
             $('.reactivehr5').addClass('growhr')
+
+        }
+
+        if($(this).scrollTop() >= $('.reactivehr6').position().top - $(window).height()){
+
+            $('.reactivehr6').addClass('growhr')
 
         }
 
